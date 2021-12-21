@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 const db = require("../models");
 const messageConst = require('../config/message');
-
+const Sequelize = require("sequelize");
 //questionF list
 router.get('/list', async (req, res, next) => {
     try {
-        const roundTwoQuestionList = await db.roundTwoQuestionModel.findAll({ order: [['name', 'ASC']], })
+        
+        const roundTwoQuestionList = await db.roundTwoQuestionModel.findAll({    order: Sequelize.literal('rand()'), limit: 3 })
         if (categoryList) {
             return res.send({
                 status: 200,

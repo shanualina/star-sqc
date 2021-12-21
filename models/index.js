@@ -29,4 +29,11 @@ db.roundTwoQuestionModel = require("./roundTwoQuestion.model")(sequelize, Sequel
 db.roundThirdQuestionModel = require("./roundThirdQuestion.model")(sequelize, Sequelize);
 db.userSetModel = require("./userSet.model")(sequelize, Sequelize);
 db.transactionModel = require("./transaction.model")(sequelize, Sequelize);
+
+
+//forgein key relations
+
+db.nationalityModel.belongsTo(db.userModel);
+db.categoryModel.belongsTo(db.userModel);
+
 module.exports = db;
