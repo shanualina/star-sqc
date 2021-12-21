@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-    const roundTwoQueModel = sequelize.define("roundTwoQue", {
+    const roundThirdQueModel = sequelize.define("roundThird", {
         quesrionNO: {
             type: Sequelize.STRING
         },
@@ -40,5 +40,5 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE
         }
     });
-    return roundTwoQueModel;
+    return roundThirdQueModel;
 };
